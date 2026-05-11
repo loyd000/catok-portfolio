@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f1f14;
+  --foreground: #e8f5e9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Syne — logotype, headings, big numbers */
+  --font-display: var(--font-syne);
+  /* Space Grotesk — default body, paragraphs, general content */
+  --font-sans: var(--font-space-grotesk);
+  /* IBM Plex Mono — labels, tags, badges, monospaced details */
+  --font-mono: var(--font-ibm-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-catok-darkest: #0f1f14;
+  --color-catok-dark: #1a2e1e;
+  --color-catok-primary: #2d6a4f;
+  --color-catok-accent: #52b788;
+  --color-catok-light: #95d5b2;
+  --color-catok-pale: #d8f3dc;
+  --color-catok-cream: #fefae0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
