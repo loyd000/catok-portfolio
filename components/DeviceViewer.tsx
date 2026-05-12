@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -38,14 +38,6 @@ function FallbackSpinner() {
 }
 
 export default function DeviceViewer() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   return (
     <div className="relative w-full h-full">
@@ -74,7 +66,7 @@ export default function DeviceViewer() {
           <Environment preset="warehouse" background={false} />
 
           <OrbitControls
-            enableZoom={!isMobile}
+            enableZoom={false}
             enablePan={false}
             autoRotate
             autoRotateSpeed={1.2}
@@ -93,7 +85,7 @@ export default function DeviceViewer() {
             d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
           />
         </svg>
-        {isMobile ? "Drag to rotate" : "Drag to rotate · Scroll to zoom"}
+        Drag to rotate
       </p>
     </div>
   );
