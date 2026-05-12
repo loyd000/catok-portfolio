@@ -20,7 +20,7 @@ export default function Hero() {
 
       {/* 3D model — right side, full section height, sandwiched behind text */}
       <motion.div
-        className="absolute top-0 right-0 w-[58%] h-full"
+        className="hidden md:block absolute top-0 right-0 w-[58%] h-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
@@ -48,11 +48,21 @@ export default function Hero() {
             <p className="text-xl md:text-2xl text-white/70 font-light mb-3">
               Smart Coconut Maturity Classifier
             </p>
-            <p className="text-white/40 text-sm max-w-md leading-relaxed mb-10">
+            <p className="text-white/40 text-sm max-w-md leading-relaxed mb-6">
               A handheld device that classifies young coconut (buko) maturity by analyzing the
               sound it makes when tapped — replacing manual tapping with on-device AI (TinyML)
               that requires no internet and no expertise.
             </p>
+
+            {/* 3D model — mobile only, inline between description and mini flow */}
+            <motion.div
+              className="block md:hidden w-full h-64 mb-8 -mx-6 px-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+            >
+              <DeviceViewer />
+            </motion.div>
 
             {/* Mini process flow */}
             <div className="flex items-start gap-0 mb-10">
