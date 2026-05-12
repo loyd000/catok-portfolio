@@ -14,7 +14,7 @@ import {
 function DeviceModel() {
   const { scene } = useGLTF("/models/device.glb");
   return (
-    <Bounds fit observe margin={1.4}>
+    <Bounds fit observe margin={0.9}>
       <Center>
         <primitive object={scene} />
       </Center>

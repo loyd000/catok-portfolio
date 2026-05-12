@@ -55,7 +55,7 @@ export default function Hero() {
             </p>
 
             {/* 3D model — mobile only, sits between description and mini flow */}
-            <div className="block md:hidden w-full h-60 mb-8">
+            <div className="block md:hidden w-full h-80 mb-8">
               <DeviceViewer />
             </div>
 
